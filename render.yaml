@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: eklesia-api
+    env: python
+    buildCommand: |
+      pip install -r requirements.txt
+      playwright install chromium
+      playwright install-deps
+    startCommand: gunicorn app:app
